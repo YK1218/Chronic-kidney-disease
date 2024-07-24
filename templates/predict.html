@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict - Kidney Disease Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Enter your details to predict</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+        <label for="albumin">Albumin (Numeric):</label>
+        <input type="number" step="any" name="albumin" required><br>
+
+        <label for="sugar">Sugar (Numeric):</label>
+        <input type="number" step="any" name="sugar" required><br>
+
+        <label for="red_blood_cells">Red Blood Cells (Categorical):</label>
+        <select name="red_blood_cells" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="serum_creatinine">Serum Creatinine (Numeric):</label>
+        <input type="number" step="any" name="serum_creatinine" required><br>
+
+        <label for="hemoglobin">Hemoglobin (Numeric):</label>
+        <input type="number" step="any" name="hemoglobin" required><br>
+
+        <label for="red_blood_cell_count">Red Blood Cell Count (Numeric):</label>
+        <input type="number" step="any" name="red_blood_cell_count" required><br>
+
+        <label for="hypertension">Hypertension (Categorical):</label>
+        <select name="hypertension" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="diabetes_mellitus">Diabetes Mellitus (Categorical):</label>
+        <select name="diabetes_mellitus" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="appetite">Appetite (Categorical):</label>
+        <select name="appetite" required>
+            <option value="1">Good</option>
+            <option value="0">Poor</option>
+        </select><br>
+
+        <label for="pedal_edema">Pedal Edema (Categorical):</label>
+        <select name="pedal_edema" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
